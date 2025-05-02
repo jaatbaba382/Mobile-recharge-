@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Offers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .operator-selection {
+            margin-bottom: 20px;
+        }
+        .offers {
+            display: none;
+        }
+        .offer {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .offer h3 {
+            color: #007bff;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recharge Special Offers</h1>
+    </header>
+    <div class="container">
+        <div class="operator-selection">
+            <label for="operator">Select Operator:</label>
+            <select id="operator" onchange="showOffers()">
+                <option value="">--Select--</option>
+                <option value="jio">Jio</option>
+                <option value="airtel">Airtel</option>
+            </select>
+        </div>
+        <div id="jio-offers" class="offers">
+            <div class="offer">
+                <h3>Plan: ₹239</h3>
+                <p>Discounted Price: ₹95.6</p>
+                <p>Benefits: 1.5GB/Day, Unlimited Calls, 100 SMS/Day</p>
+                <button onclick="makePayment('₹95.6')">Recharge Now</button>
+            </div>
+            <div class="offer">
+                <h3>Plan: ₹299</h3>
+                <p>Discounted Price: ₹119.6</p>
+                <p>Benefits: 2GB/Day, Unlimited Calls, 100 SMS/Day</p>
+                <button onclick="makePayment('₹119.6')">Recharge Now</button>
+            </div>
+        </div>
+        <div id="airtel-offers" class="offers">
+            <div class="offer">
+                <h3>Plan: ₹249</h3>
+                <p>Discounted Price: ₹99.6</p>
+                <p>Benefits: 1.5GB/Day, Unlimited Calls, 100 SMS/Day</p>
+                <button onclick="makePayment('₹99.6')">Recharge Now</button>
+            </div>
+            <div class="offer">
+                <h3>Plan: ₹399</h3>
+                <p>Discounted Price: ₹159.6</p>
+                <p>Benefits: 3GB/Day, Unlimited Calls, 100 SMS/Day</p>
+                <button onclick="makePayment('₹159.6')">Recharge Now</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Recharge Offers</p>
+    </footer>
+    <script>
+        function showOffers() {
+            document.getElementById('jio-offers').style.display = 'none';
+            document.getElementById('airtel-offers').style.display = 'none';
+            const operator = document.getElementById('operator').value;
+            if (operator === 'jio') {
+                document.getElementById('jio-offers').style.display = 'block';
+            } else if (operator === 'airtel') {
+                document.getElementById('airtel-offers').style.display = 'block';
+            }
+        }
+
+        function makePayment(amount) {
+            alert(`Redirecting to payment for ${amount}...`);
+        }
+    </script>
+</body>
+</html>
